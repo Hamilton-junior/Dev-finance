@@ -110,6 +110,9 @@ header {
   background: #49aa26;
   color: #fff;
 }
+.card.total.balance-red {
+  background: #e92929;
+}
 #transaction {
   display: block;
   width: 100%;

@@ -90,10 +90,18 @@ const DOM = {
         document.querySelector('[data-balance="income"]').innerHTML = Utils.formatCurrency(Transaction.incomes());
         document.querySelector('[data-balance="expense"]').innerHTML = Utils.formatCurrency(Transaction.expenses());
         document.querySelector('[data-balance="total"]').innerHTML = Utils.formatCurrency(Transaction.total());
+        this.colorBalanceTotal();
     },
     // função que vai limpar as transações da tela
     clearTransactions() {
         DOM.transactionsContainer.innerHTML = "";
+    },
+    colorBalanceTotal() {
+        if(Transaction.total() < 0) {
+            document.querySelector('.card.total').classList.add('balance-red');
+        } else {
+            document.querySelector('.card.total').classList.remove('balance-red');
+        }
     }
 }
 
